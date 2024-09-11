@@ -1,0 +1,42 @@
+{
+  "run-tests": {
+    "description": "Run tests for specified pages",
+    "method": "post",
+    "endpoint": "testseries",
+    "options": [
+      {
+        "flag": "--website <id>",
+        "description": "Website ID",
+        "required": true
+      },
+      {
+        "flag": "--pages <pages...>",
+        "description": "Array of page_id and device (desktop/mobile) tuples",
+        "required": false
+      }
+    ],
+    "polling": {
+      "enabled": true,
+      "interval": 10000,
+      "endpoint": "testseries/{seriesId}"
+    }
+  },
+  "list-websites": {
+    "description": "List all websites",
+    "method": "get",
+    "endpoint": "websites",
+    "options": []
+  },
+  "list-pages": {
+    "description": "List all pages for a website",
+    "method": "get",
+    "endpoint": "{website}/settings/pages",
+    "options": [
+      {
+        "flag": "--website <id>",
+        "description": "Website ID",
+        "required": true
+      }
+    ]
+  }
+}
