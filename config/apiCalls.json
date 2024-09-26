@@ -18,7 +18,8 @@
       {
         "flag": "--initiator <initiator>",
         "description": "Defaults to 'CLI'. Can be used to show which process has started the test series.",
-        "required": false
+        "required": false,
+        "defaultValue": "CLI"
       },
       {
         "flag": "--description <description>",

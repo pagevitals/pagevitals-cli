@@ -29,23 +29,25 @@ Object.entries(apiCalls).forEach(([command, details]) => {
 
   details.options.forEach(option => {
     if (option.required) {
-      cmd.requiredOption(option.flag, option.description);
+      cmd.requiredOption(option.flag, option.description, option.defaultValue);
     } else if (option.multiple) {
-      cmd.option(option.flag, option.description, (value, previous) => previous.concat([value]), []);
+      cmd.option(option.flag, option.description, (value, previous) => previous.concat([value]), [], option.defaultValue);
     } else {
-      cmd.option(option.flag, option.description);
+      cmd.option(option.flag, option.description, option.defaultValue);
     }
   });
 
   // Add the --output option to all commands
   cmd.option('--output <format>', 'Output format (json or console)', 'console');
+  cmd.option('--token <token>', 'Set API token. Can also be set using the token operation');
 
   cmd.action(async (options) => {
-    const apiToken = config.get('apiToken');
+    const apiToken = options.token || config.get('apiToken');
     if (!apiToken) {
       console.error('API token not set. Use "pagevitals token <token>" to set it.');
       process.exit(1);
     }
+    console.log("Token: " + apiToken);
 
     try {
       let result;
