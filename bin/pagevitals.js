@@ -11,7 +11,7 @@ const config = new Conf({
   projectName: 'pagevitals'
 });
 
-program.version('1.1.1');
+program.version('1.1.2');
 
 // Set API token
 program
@@ -47,8 +47,7 @@ Object.entries(apiCalls).forEach(([command, details]) => {
       console.error('API token not set. Use "pagevitals token <token>" to set it.');
       process.exit(1);
     }
-    console.log("Token: " + apiToken);
-
+    
     try {
       let result;
       switch (command) {
