@@ -11,7 +11,7 @@ const config = new Conf({
   projectName: 'pagevitals'
 });
 
-program.version('1.1.0');
+program.version('1.1.1');
 
 // Set API token
 program
