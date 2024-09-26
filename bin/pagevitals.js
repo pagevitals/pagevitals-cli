@@ -11,7 +11,7 @@ const config = new Conf({
   projectName: 'pagevitals'
 });
 
-program.version('1.0.1');
+program.version('1.1.0');
 
 // Set API token
 program
@@ -30,6 +30,8 @@ Object.entries(apiCalls).forEach(([command, details]) => {
   details.options.forEach(option => {
     if (option.required) {
       cmd.requiredOption(option.flag, option.description);
+    } else if (option.multiple) {
+      cmd.option(option.flag, option.description, (value, previous) => previous.concat([value]), []);
     } else {
       cmd.option(option.flag, option.description);
     }

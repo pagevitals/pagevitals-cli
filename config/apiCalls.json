@@ -10,8 +10,19 @@
         "required": true
       },
       {
-        "flag": "--pages <pages...>",
-        "description": "Array of page_id and device (desktop/mobile) tuples",
+        "flag": "--page <page_id,device>",
+        "description": "Page ID and device (can be used multiple times)",
+        "required": false,
+        "multiple": true
+      },
+      {
+        "flag": "--initiator <initiator>",
+        "description": "Defaults to 'CLI'. Can be used to show which process has started the test series.",
+        "required": false
+      },
+      {
+        "flag": "--description <description>",
+        "description": "Can be used to show the deployment version, a commit messsage or other reasons why the test series was run.",
         "required": false
       }
     ],

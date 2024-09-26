@@ -42,6 +42,12 @@ To run performance tests for a website, use the following command:
 pagevitals run-tests --website <website_id>
 ```
 
+If you want to limit the pages and devices you're testing, use the --page command like this:
+
+```bash
+pagevitals run-tests --website <website_id> --page <page_id1>,<device1> --page <page_id2,<device2> ...
+```
+
 For more information on available commands, use:
 
 ```bash
