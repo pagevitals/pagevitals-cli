@@ -50,5 +50,22 @@
         "required": true
       }
     ]
+  },
+  "get-lighthouse-report": {
+    "description": "Get the Lighthouse report for a single test",
+    "method": "get",
+    "endpoint": "{website}/tests/{test-id}",
+    "options": [
+      {
+        "flag": "--website <id>",
+        "description": "Website ID",
+        "required": true
+      },
+      {
+        "flag": "--test <test-id>",
+        "description": "Test ID",
+        "required": true
+      }
+    ]
   }
 }
