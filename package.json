@@ -1,6 +1,6 @@
 {
   "name": "@pagevitals/pagevitals-cli",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "A command-line interface for interacting with the PageVitals API",
   "main": "bin/pagevitals.js",
   "keywords": [
@@ -17,7 +17,7 @@
     "url": "https://github.com/pagevitals/pagevitals-cli.git"
   },
   "dependencies": {
-    "axios": "^1.14.0",
+    "axios": "^1.15.0",
     "chalk": "^4.1.2",
     "commander": "^8.0.0",
     "conf": "^10.0.1",
